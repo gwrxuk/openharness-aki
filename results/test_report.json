@@ -1,0 +1,14 @@
+{
+  "passed": 7,
+  "total": 8,
+  "details": [
+    "FAIL: Preprocessed AnnData not found or empty",
+    "PASS: AKI signature scores (6337921 bytes)",
+    "PASS: Differential expression (2115669 bytes)",
+    "PASS: Model results JSON (906641 bytes)",
+    "PASS: Feature importance (1396 bytes)",
+    "PASS: ROC-AUC = 0.8858 (threshold \u2265 0.70)",
+    "PASS: AKI signature genes detected: ['HAVCR1', 'LCN2', 'CXCL8', 'MMP7', 'SOX9', 'VIM']",
+    "PASS: Permutation p-value = 0.0000 (n=100)"
+  ]
+}

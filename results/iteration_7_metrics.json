@@ -1,0 +1,43 @@
+{
+  "iteration": 7,
+  "approach_name": "TunedRF-Best",
+  "description": "GridSearchCV-optimised Random Forest on best feature set identified across iterations",
+  "timestamp": "2026-04-29T17:04:14.037542",
+  "feature_method": "top_de",
+  "n_features": 75,
+  "model": "tuned_rf",
+  "n_cells_aki": 859,
+  "n_cells_normal": 27497,
+  "per_fold_auroc": [
+    0.9058,
+    0.891,
+    0.8906,
+    0.8901,
+    0.9453
+  ],
+  "per_fold_auprc": [
+    0.772,
+    0.7552,
+    0.745,
+    0.7453,
+    0.8275
+  ],
+  "per_fold_f1": [
+    0.6556,
+    0.7288,
+    0.6734,
+    0.475,
+    0.6624
+  ],
+  "auroc_mean": 0.9045373653216696,
+  "auroc_std": 0.021200753713393184,
+  "auprc_mean": 0.768996183572648,
+  "auprc_std": 0.030877428307481365,
+  "f1_mean": 0.6390350826415745,
+  "f1_std": 0.08595988591262005,
+  "sensitivity_mean": 0.8102067183462532,
+  "specificity_mean": 0.9755603299773512,
+  "total_time_sec": 107.66,
+  "wall_time_sec": 108.65,
+  "composite_score": 0.8108
+}

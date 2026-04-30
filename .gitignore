@@ -1,0 +1,45 @@
+# Large data files (excluded; GitHub rejects >100MB)
+data/*.h5ad
+data/*.h5
+data/*.loom
+data/*.zarr/
+data/*.mtx
+data/*.gz
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and temp
+*.log
+*.tmp
+*.bak
+
+# Environment / secrets
+.env
+.env.local
+*.pem
+*.key

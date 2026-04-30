@@ -1,0 +1,72 @@
+{
+  "this_study_dataset": {
+    "name": "Kidney Cell Atlas Mature_Full_v2.1",
+    "pmid": "31578194",
+    "species": "human",
+    "modality": "scRNA-seq (10x Chromium)",
+    "source": "surgical nephrectomy",
+    "cells": 40268,
+    "genes": 33694,
+    "aki_cells": 859,
+    "normal_pt_cells": 27497
+  },
+  "retrieved_study_differences": [
+    {
+      "pmid": "37468583",
+      "note": "Human AKI atlas \u2014 snRNA-seq biopsy vs. nephrectomy in this study",
+      "species": "human",
+      "modality": "snRNA-seq",
+      "cohort_n": "~75,000"
+    },
+    {
+      "pmid": "33859189",
+      "note": "SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; SPECIES DIFFERENCE: mouse IRI model vs. human Kidney Cell Atlas",
+      "species": "mouse",
+      "modality": "scRNA-seq",
+      "cohort_n": "~17,000"
+    },
+    {
+      "pmid": "32571916",
+      "note": "SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; SPECIES DIFFERENCE: mouse IRI model \u2014 different species and injury model",
+      "species": "mouse",
+      "modality": "scRNA-seq",
+      "cohort_n": "~15,000"
+    },
+    {
+      "pmid": "31604275",
+      "note": "SAME DATASET: This is the Kidney Cell Atlas paper (Stewart et al. Science 2019)",
+      "species": "human",
+      "modality": "scRNA-seq",
+      "cohort_n": "40,268"
+    },
+    {
+      "pmid": "26236991",
+      "note": "SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; MODALITY DIFFERENCE: mechanistic mouse EMT study \u2014 no ML, no single-cell",
+      "species": "mouse",
+      "modality": "histology/IHC",
+      "cohort_n": "N/A"
+    },
+    {
+      "pmid": "28355504",
+      "note": "MODALITY DIFFERENCE: clinical/biomarker cohort vs. transcriptomic single-cell; MODALITY DIFFERENCE: clinical ICU cohort vs. snRNA-seq",
+      "species": "human",
+      "modality": "clinical/biomarker",
+      "cohort_n": "~766 patients"
+    },
+    {
+      "pmid": "22045571",
+      "note": "Review/mechanistic paper \u2014 no original ML dataset",
+      "species": "review",
+      "modality": "review",
+      "cohort_n": "N/A"
+    },
+    {
+      "pmid": "12081583",
+      "note": "MODALITY DIFFERENCE: protein biomarker validation vs. transcriptomic",
+      "species": "human/rat",
+      "modality": "protein/IHC",
+      "cohort_n": "N/A"
+    }
+  ],
+  "caveat": "IMPORTANT: Literature AUROCs were derived from heterogeneous datasets that differ from the Kidney Cell Atlas (Mature_Full_v2.1) used in this study. Differences include: species (mouse vs. human), modality (bulk RNA-seq or clinical biomarker vs. snRNA-seq), injury model (IRI/cisplatin vs. steady-state atlas with maladaptive cell states), and cohort composition. Literature benchmarks serve as directional targets only."
+}

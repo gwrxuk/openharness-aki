@@ -1,0 +1,10 @@
+{
+  "iteration": 3,
+  "approach_name": "LASSO-RF",
+  "auroc_mean": 0.9528931269800249,
+  "auprc_mean": 0.8273860484888216,
+  "f1_mean": 0.5938409622658001,
+  "composite_score": 0.8434,
+  "sensitivity_mean": 0.9033523731810146,
+  "specificity_mean": 0.9639958339532807
+}

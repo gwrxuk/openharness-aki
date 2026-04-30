@@ -1,0 +1,41 @@
+{
+  "pmid": "12081583",
+  "title": "Kidney Injury Molecule-1 (KIM-1): a novel biomarker for human renal proximal tubule injury.",
+  "authors": [
+    "Han WK",
+    "Bailly V",
+    "Abichandani R",
+    "Thadhani R",
+    "Bonventre JV"
+  ],
+  "journal": "Kidney Int",
+  "year": "2002",
+  "doi": "10.1046/j.1523-1755.2002.00433.x",
+  "pmcid": "",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/12081583/",
+  "abstract": "Kidney Injury Molecule-1 (KIM-1): a novel biomarker for human renal proximal \ntubule injury.",
+  "relevance_score": 0.375,
+  "pdf_path": "",
+  "uses_kidney_cell_atlas": false,
+  "atlas_evidence": "none",
+  "benchmark_role": "BACKGROUND_LITERATURE",
+  "reported_aurocs": [],
+  "reported_auprcs": [],
+  "reported_f1s": [],
+  "methods_mentioned": [],
+  "detected_species": "mouse",
+  "detected_modality": "snRNA-seq",
+  "detected_cohort_n": [
+    "48",
+    "28"
+  ],
+  "dataset_info": {
+    "species": "human/rat",
+    "modality": "protein/IHC",
+    "source": "biopsy/model",
+    "cell_n": "N/A",
+    "note": "MODALITY DIFFERENCE: protein biomarker validation vs. transcriptomic"
+  },
+  "dataset_differs_from_this_study": "MODALITY DIFFERENCE: protein biomarker validation vs. transcriptomic",
+  "fetched_at": "2026-04-29T16:56:13.477352"
+}

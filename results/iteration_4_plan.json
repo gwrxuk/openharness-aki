@@ -1,0 +1,24 @@
+{
+  "iteration": 4,
+  "timestamp": "2026-04-29T16:56:32.880440",
+  "approach_id": 4,
+  "approach_name": "PCA-GBT",
+  "description": "PCA (50 components on top-2000 HVGs) \u2192 sklearn Gradient Boosting Trees",
+  "rationale": "PCA captures global transcriptome covariance structure beyond pairwise DE. GBT with shallow depth avoids overfitting on compressed representations.",
+  "config": {
+    "feature_method": "pca",
+    "n_components": 50,
+    "model": "gradient_boosting",
+    "model_params": {
+      "n_estimators": 200,
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "subsample": 0.8
+    }
+  },
+  "reviewer_context": {
+    "previous_decision": "ACCEPT",
+    "best_auroc_so_far": 0.9528931269800249,
+    "hint": "Continue improving. Consider ensemble or stacking to combine the gains seen in this iteration with previous approaches."
+  }
+}

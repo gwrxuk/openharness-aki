@@ -1,0 +1,56 @@
+============================================================
+  [SEARCH AGENT] PubMed Query — NCBI E-utilities
+  Started: 2026-04-29 16:55:40
+  Saving individual studies → /Users/junghualiu/case/a2a/kidney/kidney_gene/openharness_aki/results/fetched_studies
+============================================================
+
+  Query: "acute kidney injury scRNA-seq machine learning classification"
+  Found 0 hits, 0 new PMIDs
+
+  Query: "AKI proximal tubule gene expression random forest XGBoost"
+  Found 0 hits, 0 new PMIDs
+
+  Query: "kidney injury biomarker single cell RNA sequencing AUROC prediction"
+  Found 2 hits, 2 new PMIDs
+      PDF unavailable (paywalled or no open-access copy found) — PubMed: https://pubmed.ncbi.nlm.nih.gov/41334180/
+    Saved PMID 41334180 → PMID_41334180.json
+      PDF unavailable (paywalled or no open-access copy found) — PubMed: https://pubmed.ncbi.nlm.nih.gov/40667011/
+    Saved PMID 40667011 → PMID_40667011.json
+  AUROCs : []
+  Methods: ['XGBoost']
+
+  Fetching 8 curated AKI papers ...
+    Saved PMID 37468583  [Human AKI atlas — snRNA-seq biopsy vs. nephrectomy in this study]  → PMID_37468583.json
+    Saved PMID 33859189  [SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; SPECIES D]  → PMID_33859189.json
+      PMC FTP download failed: <urlopen error 550 pub/pmc/oa_pdf/e9/57: No such file or directory>
+      PDF unavailable (paywalled or no open-access copy found) — PubMed: https://pubmed.ncbi.nlm.nih.gov/32571916/
+    Saved PMID 32571916  [SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; SPECIES D]  → PMID_32571916.json
+      PMC: PMC7343525 is not open-access — PDF paywalled
+      PDF unavailable (paywalled or no open-access copy found) — PubMed: https://pubmed.ncbi.nlm.nih.gov/31604275/
+    Saved PMID 31604275  [SAME DATASET: This is the Kidney Cell Atlas paper (Stewart et al. Scie]  → PMID_31604275.json
+      PDF unavailable (paywalled or no open-access copy found) — PubMed: https://pubmed.ncbi.nlm.nih.gov/26236991/
+    Saved PMID 26236991  [SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; MODALITY ]  → PMID_26236991.json
+      PDF unavailable (paywalled or no open-access copy found) — PubMed: https://pubmed.ncbi.nlm.nih.gov/28355504/
+    Saved PMID 28355504  [MODALITY DIFFERENCE: clinical/biomarker cohort vs. transcriptomic sing]  → PMID_28355504.json
+    Saved PMID 22045571  [Review/mechanistic paper — no original ML dataset]  → PMID_22045571.json
+      PDF unavailable (paywalled or no open-access copy found) — PubMed: https://pubmed.ncbi.nlm.nih.gov/12081583/
+    Saved PMID 12081583  [MODALITY DIFFERENCE: protein biomarker validation vs. transcriptomic]  → PMID_12081583.json
+  Curated AUROCs : []
+  Curated methods: []
+  [ATLAS MATCH] PMID 31604275: Spatiotemporal immune zonation of the human kidney.
+
+  Atlas paper identified (PMID ['31604275']) — this is the source dataset paper.
+  No ML studies using the Kidney Cell Atlas found that report classification AUROCs.
+  → Related-study AUROCs used as directional literature reference only (not direct comparators).
+
+  Total unique papers : 10
+  Individual study files in: /Users/junghualiu/case/a2a/kidney/kidney_gene/openharness_aki/results/fetched_studies
+  Benchmark source     : background_literature_only
+  Atlas-using studies  : ['31604275']  ← used as AUROC comparators
+  Atlas-study AUROCs   : []
+  Best benchmark AUROC : 0.9000
+  Target AUROC         : 0.9100
+  Dataset caveat: IMPORTANT: Literature AUROCs were derived from heterogeneous datasets that differ from the Kidney Cell Atlas (Mature_Ful...
+
+  Saved search_results.json     → /Users/junghualiu/case/a2a/kidney/kidney_gene/openharness_aki/results/search_results.json
+  Saved dataset_differences.json → /Users/junghualiu/case/a2a/kidney/kidney_gene/openharness_aki/results/dataset_differences.json

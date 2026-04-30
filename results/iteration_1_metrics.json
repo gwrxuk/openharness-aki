@@ -1,0 +1,43 @@
+{
+  "iteration": 1,
+  "approach_name": "RF-Baseline",
+  "description": "Random Forest (200 trees, depth=8) on top-50 DE genes by |logFC|",
+  "timestamp": "2026-04-29T16:56:22.205889",
+  "feature_method": "top_de",
+  "n_features": 50,
+  "model": "random_forest",
+  "n_cells_aki": 859,
+  "n_cells_normal": 27497,
+  "per_fold_auroc": [
+    0.8851,
+    0.8674,
+    0.8735,
+    0.8738,
+    0.9206
+  ],
+  "per_fold_auprc": [
+    0.7128,
+    0.6917,
+    0.6882,
+    0.6946,
+    0.7756
+  ],
+  "per_fold_f1": [
+    0.6569,
+    0.6846,
+    0.619,
+    0.6161,
+    0.6919
+  ],
+  "auroc_mean": 0.8840675547713308,
+  "auroc_std": 0.019116917981270607,
+  "auprc_mean": 0.7125652137313837,
+  "auprc_std": 0.03263652258409151,
+  "f1_mean": 0.6537349832506519,
+  "f1_std": 0.03176019215990101,
+  "sensitivity_mean": 0.7776077791377668,
+  "specificity_mean": 0.9811250111590537,
+  "total_time_sec": 1.7,
+  "wall_time_sec": 3.99,
+  "composite_score": 0.7866
+}

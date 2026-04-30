@@ -1,0 +1,43 @@
+{
+  "iteration": 2,
+  "approach_name": "XGB-Extended",
+  "description": "XGBoost (300 trees, depth=5, lr=0.03) on top-100 DE genes",
+  "timestamp": "2026-04-29T16:56:27.572129",
+  "feature_method": "top_de",
+  "n_features": 100,
+  "model": "xgboost",
+  "n_cells_aki": 859,
+  "n_cells_normal": 27497,
+  "per_fold_auroc": [
+    0.9345,
+    0.9043,
+    0.92,
+    0.905,
+    0.9412
+  ],
+  "per_fold_auprc": [
+    0.8279,
+    0.794,
+    0.8099,
+    0.7956,
+    0.8557
+  ],
+  "per_fold_f1": [
+    0.6727,
+    0.6526,
+    0.5714,
+    0.8424,
+    0.6786
+  ],
+  "auroc_mean": 0.921003770220277,
+  "auroc_std": 0.01501166297505721,
+  "auprc_mean": 0.8166366748333413,
+  "auprc_std": 0.02304687523081684,
+  "f1_mean": 0.6835385264593926,
+  "f1_std": 0.08822024007763667,
+  "sensitivity_mean": 0.8439684482524139,
+  "specificity_mean": 0.979125050835689,
+  "total_time_sec": 1.6,
+  "wall_time_sec": 2.59,
+  "composite_score": 0.8422
+}

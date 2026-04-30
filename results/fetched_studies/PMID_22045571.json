@@ -1,0 +1,38 @@
+{
+  "pmid": "22045571",
+  "title": "Cellular pathophysiology of ischemic acute kidney injury.",
+  "authors": [
+    "Bonventre JV",
+    "Yang L"
+  ],
+  "journal": "J Clin Invest",
+  "year": "2011",
+  "doi": "10.1172/JCI45161",
+  "pmcid": "PMC3204829",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/22045571/",
+  "abstract": "Cellular pathophysiology of ischemic acute kidney injury.",
+  "relevance_score": 0.75,
+  "pdf_path": "/Users/junghualiu/case/a2a/kidney/kidney_gene/openharness_aki/results/fetched_studies/pdfs/PMID_22045571.pdf",
+  "uses_kidney_cell_atlas": false,
+  "atlas_evidence": "none",
+  "benchmark_role": "BACKGROUND_LITERATURE",
+  "reported_aurocs": [],
+  "reported_auprcs": [],
+  "reported_f1s": [],
+  "methods_mentioned": [],
+  "detected_species": "mouse",
+  "detected_modality": "snRNA-seq",
+  "detected_cohort_n": [
+    "48",
+    "28"
+  ],
+  "dataset_info": {
+    "species": "review",
+    "modality": "review",
+    "source": "review",
+    "cell_n": "N/A",
+    "note": "Review/mechanistic paper — no original ML dataset"
+  },
+  "dataset_differs_from_this_study": "Review/mechanistic paper — no original ML dataset",
+  "fetched_at": "2026-04-29T16:56:12.755476"
+}

@@ -1,0 +1,26 @@
+{
+  "dataset": "Kidney Cell Atlas Mature_Full_v2.1 (Stewart et al. Science 2019)",
+  "n_cells": 40268,
+  "n_genes": 33694,
+  "aki_cells": 859,
+  "normal_pt_cells": 27497,
+  "best_model": "RandomForest",
+  "training_auc": 0.8857684675771382,
+  "cv_rf_auc": 0.884053807843068,
+  "cv_rf_std": 0.019116032196362664,
+  "cv_xgb_auc": 0.8702404863843963,
+  "cv_lr_auc": 0.7575740035600916,
+  "permutation_p": 0.0,
+  "top_genes": [
+    "TACSTD2",
+    "KIAA0101",
+    "PTTG1",
+    "CDK1",
+    "BGN",
+    "EHF",
+    "MFGE8",
+    "PLAC9",
+    "BIRC5",
+    "PRC1"
+  ]
+}

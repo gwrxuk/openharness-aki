@@ -1,0 +1,43 @@
+{
+  "pmid": "31604275",
+  "title": "Spatiotemporal immune zonation of the human kidney.",
+  "authors": [
+    "Stewart BJ",
+    "Ferdinand JR",
+    "Young MD",
+    "Mitchell TJ",
+    "Loudon KW",
+    "Riding AM",
+    "et al."
+  ],
+  "journal": "Science",
+  "year": "2019",
+  "doi": "10.1126/science.aat5031",
+  "pmcid": "PMC7343525",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/31604275/",
+  "abstract": "Spatiotemporal immune zonation of the human kidney.",
+  "relevance_score": 0.25,
+  "pdf_path": "",
+  "uses_kidney_cell_atlas": true,
+  "atlas_evidence": "Spatiotemporal immune zonation",
+  "benchmark_role": "AUROC_COMPARATOR",
+  "reported_aurocs": [],
+  "reported_auprcs": [],
+  "reported_f1s": [],
+  "methods_mentioned": [],
+  "detected_species": "mouse",
+  "detected_modality": "snRNA-seq",
+  "detected_cohort_n": [
+    "48",
+    "28"
+  ],
+  "dataset_info": {
+    "species": "human",
+    "modality": "scRNA-seq",
+    "source": "surgical nephrectomy",
+    "cell_n": "40,268",
+    "note": "THIS STUDY DATASET (Kidney Cell Atlas Mature_Full_v2.1)"
+  },
+  "dataset_differs_from_this_study": "SAME DATASET: This is the Kidney Cell Atlas paper (Stewart et al. Science 2019)",
+  "fetched_at": "2026-04-29T16:56:09.443758"
+}

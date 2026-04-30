@@ -1,0 +1,19 @@
+{
+  "iteration": 1,
+  "timestamp": "2026-04-29T16:56:13.659895",
+  "approach_id": 1,
+  "approach_name": "RF-Baseline",
+  "description": "Random Forest (200 trees, depth=8) on top-50 DE genes by |logFC|",
+  "rationale": "Establish a reproducible baseline matching published AKI classifiers. Literature (Lake et al. 2023, Miao et al. 2021) uses RF as primary benchmark.",
+  "config": {
+    "feature_method": "top_de",
+    "n_features": 50,
+    "model": "random_forest",
+    "model_params": {
+      "n_estimators": 200,
+      "max_depth": 8,
+      "class_weight": "balanced"
+    }
+  },
+  "reviewer_context": null
+}

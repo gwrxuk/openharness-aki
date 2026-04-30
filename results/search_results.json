@@ -1,0 +1,126 @@
+{
+  "search_timestamp": "2026-04-29T16:56:13.480754",
+  "queries": [
+    "acute kidney injury scRNA-seq machine learning classification",
+    "AKI proximal tubule gene expression random forest XGBoost",
+    "kidney injury biomarker single cell RNA sequencing AUROC prediction"
+  ],
+  "total_papers_found": 10,
+  "fetched_studies_dir": "/Users/junghualiu/case/a2a/kidney/kidney_gene/openharness_aki/results/fetched_studies",
+  "atlas_studies_found": [
+    "31604275"
+  ],
+  "benchmark_source": "background_literature_only",
+  "atlas_comparator_aurocs": [],
+  "background_aurocs": [],
+  "all_reported_aurocs": [],
+  "best_literature_auroc": 0.9,
+  "target_auroc": 0.91,
+  "methods_in_literature": [
+    "XGBoost"
+  ],
+  "dataset_differences": [
+    {
+      "pmid": "37468583",
+      "note": "Human AKI atlas \u2014 snRNA-seq biopsy vs. nephrectomy in this study",
+      "species": "human",
+      "modality": "snRNA-seq",
+      "cohort_n": "~75,000"
+    },
+    {
+      "pmid": "33859189",
+      "note": "SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; SPECIES DIFFERENCE: mouse IRI model vs. human Kidney Cell Atlas",
+      "species": "mouse",
+      "modality": "scRNA-seq",
+      "cohort_n": "~17,000"
+    },
+    {
+      "pmid": "32571916",
+      "note": "SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; SPECIES DIFFERENCE: mouse IRI model \u2014 different species and injury model",
+      "species": "mouse",
+      "modality": "scRNA-seq",
+      "cohort_n": "~15,000"
+    },
+    {
+      "pmid": "31604275",
+      "note": "SAME DATASET: This is the Kidney Cell Atlas paper (Stewart et al. Science 2019)",
+      "species": "human",
+      "modality": "scRNA-seq",
+      "cohort_n": "40,268"
+    },
+    {
+      "pmid": "26236991",
+      "note": "SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; MODALITY DIFFERENCE: mechanistic mouse EMT study \u2014 no ML, no single-cell",
+      "species": "mouse",
+      "modality": "histology/IHC",
+      "cohort_n": "N/A"
+    },
+    {
+      "pmid": "28355504",
+      "note": "MODALITY DIFFERENCE: clinical/biomarker cohort vs. transcriptomic single-cell; MODALITY DIFFERENCE: clinical ICU cohort vs. snRNA-seq",
+      "species": "human",
+      "modality": "clinical/biomarker",
+      "cohort_n": "~766 patients"
+    },
+    {
+      "pmid": "22045571",
+      "note": "Review/mechanistic paper \u2014 no original ML dataset",
+      "species": "review",
+      "modality": "review",
+      "cohort_n": "N/A"
+    },
+    {
+      "pmid": "12081583",
+      "note": "MODALITY DIFFERENCE: protein biomarker validation vs. transcriptomic",
+      "species": "human/rat",
+      "modality": "protein/IHC",
+      "cohort_n": "N/A"
+    }
+  ],
+  "dataset_caveat": "IMPORTANT: Literature AUROCs were derived from heterogeneous datasets that differ from the Kidney Cell Atlas (Mature_Full_v2.1) used in this study. Differences include: species (mouse vs. human), modality (bulk RNA-seq or clinical biomarker vs. snRNA-seq), injury model (IRI/cisplatin vs. steady-state atlas with maladaptive cell states), and cohort composition. Literature benchmarks serve as directional targets only.",
+  "papers": [
+    {
+      "query": "acute kidney injury scRNA-seq machine learning classification",
+      "pmids": [],
+      "reported_aurocs": [],
+      "methods_found": []
+    },
+    {
+      "query": "AKI proximal tubule gene expression random forest XGBoost",
+      "pmids": [],
+      "reported_aurocs": [],
+      "methods_found": []
+    },
+    {
+      "query": "kidney injury biomarker single cell RNA sequencing AUROC prediction",
+      "pmids": [
+        "41334180",
+        "40667011"
+      ],
+      "reported_aurocs": [],
+      "reported_auprcs": [],
+      "methods_found": [
+        "XGBoost"
+      ],
+      "best_auroc": null
+    },
+    {
+      "query": "curated_pmids",
+      "pmids": [
+        "37468583",
+        "33859189",
+        "32571916",
+        "31604275",
+        "26236991",
+        "28355504",
+        "22045571",
+        "12081583"
+      ],
+      "reported_aurocs": [],
+      "reported_auprcs": [],
+      "methods_found": [],
+      "best_auroc": null
+    }
+  ],
+  "recommendation": "Benchmark source: background_literature_only. Atlas-using studies found (PMIDs: ['31604275']); using their AUROCs as direct comparators. Best benchmark AUROC=0.900. Target \u22650.910. Top methods: XGBoost. Suggest: ensemble approach combining RF + XGBoost with expanded feature set."
+}

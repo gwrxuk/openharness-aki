@@ -1,0 +1,43 @@
+{
+  "pmid": "37468583",
+  "title": "An atlas of healthy and injured cell states and niches in the human kidney.",
+  "authors": [
+    "Lake BB",
+    "Menon R",
+    "Winfree S",
+    "Hu Q",
+    "Melo Ferreira R",
+    "Kalhor K",
+    "et al."
+  ],
+  "journal": "Nature",
+  "year": "2023",
+  "doi": "10.1038/s41586-023-05769-3",
+  "pmcid": "PMC10356613",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/37468583/",
+  "abstract": "An atlas of healthy and injured cell states and niches in the human kidney.",
+  "relevance_score": 0.625,
+  "pdf_path": "/Users/junghualiu/case/a2a/kidney/kidney_gene/openharness_aki/results/fetched_studies/pdfs/PMID_37468583.pdf",
+  "uses_kidney_cell_atlas": false,
+  "atlas_evidence": "none",
+  "benchmark_role": "BACKGROUND_LITERATURE",
+  "reported_aurocs": [],
+  "reported_auprcs": [],
+  "reported_f1s": [],
+  "methods_mentioned": [],
+  "detected_species": "mouse",
+  "detected_modality": "snRNA-seq",
+  "detected_cohort_n": [
+    "48",
+    "28"
+  ],
+  "dataset_info": {
+    "species": "human",
+    "modality": "snRNA-seq",
+    "source": "biopsy",
+    "cell_n": "~75,000",
+    "note": "Human AKI atlas — snRNA-seq biopsy vs. nephrectomy in this study"
+  },
+  "dataset_differs_from_this_study": "Human AKI atlas — snRNA-seq biopsy vs. nephrectomy in this study",
+  "fetched_at": "2026-04-29T16:55:51.858262"
+}

@@ -1,0 +1,43 @@
+{
+  "iteration": 5,
+  "approach_name": "MultiFeature-Vote",
+  "description": "Soft voting ensemble (RF + XGB + LR) on top-75 DE genes + 5 pathway scores",
+  "timestamp": "2026-04-29T17:01:53.942931",
+  "feature_method": "multi",
+  "n_features": 80,
+  "model": "voting",
+  "n_cells_aki": 859,
+  "n_cells_normal": 27497,
+  "per_fold_auroc": [
+    0.9319,
+    0.9016,
+    0.9126,
+    0.9233,
+    0.9438
+  ],
+  "per_fold_auprc": [
+    0.8,
+    0.7825,
+    0.7752,
+    0.7902,
+    0.8606
+  ],
+  "per_fold_f1": [
+    0.6764,
+    0.6751,
+    0.596,
+    0.6508,
+    0.6566
+  ],
+  "auroc_mean": 0.9226181699402826,
+  "auroc_std": 0.014669859645531247,
+  "auprc_mean": 0.8017156517803808,
+  "auprc_std": 0.030581259169944138,
+  "f1_mean": 0.6509814632087613,
+  "f1_std": 0.02924883098012218,
+  "sensitivity_mean": 0.8113763089895281,
+  "specificity_mean": 0.9785791929111077,
+  "total_time_sec": 3.02,
+  "wall_time_sec": 4.06,
+  "composite_score": 0.832
+}

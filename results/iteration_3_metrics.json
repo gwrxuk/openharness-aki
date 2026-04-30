@@ -1,0 +1,43 @@
+{
+  "iteration": 3,
+  "approach_name": "LASSO-RF",
+  "description": "L1-regularised logistic regression for feature selection \u2192 Random Forest",
+  "timestamp": "2026-04-29T16:56:32.429471",
+  "feature_method": "lasso",
+  "n_features": 136,
+  "model": "random_forest",
+  "n_cells_aki": 859,
+  "n_cells_normal": 27497,
+  "per_fold_auroc": [
+    0.9556,
+    0.9349,
+    0.9612,
+    0.9487,
+    0.964
+  ],
+  "per_fold_auprc": [
+    0.8142,
+    0.8235,
+    0.8271,
+    0.8042,
+    0.868
+  ],
+  "per_fold_f1": [
+    0.5985,
+    0.624,
+    0.5235,
+    0.6126,
+    0.6107
+  ],
+  "auroc_mean": 0.9528931269800249,
+  "auroc_std": 0.010397959626185858,
+  "auprc_mean": 0.8273860484888216,
+  "auprc_std": 0.02180147318466242,
+  "f1_mean": 0.5938409622658001,
+  "f1_std": 0.036092108577616765,
+  "sensitivity_mean": 0.9033523731810146,
+  "specificity_mean": 0.9639958339532807,
+  "total_time_sec": 1.51,
+  "wall_time_sec": 2.72,
+  "composite_score": 0.8434
+}

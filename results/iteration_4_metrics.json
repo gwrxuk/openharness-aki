@@ -1,0 +1,43 @@
+{
+  "iteration": 4,
+  "approach_name": "PCA-GBT",
+  "description": "PCA (50 components on top-2000 HVGs) \u2192 sklearn Gradient Boosting Trees",
+  "timestamp": "2026-04-29T17:01:47.130279",
+  "feature_method": "pca",
+  "n_features": 50,
+  "model": "gradient_boosting",
+  "n_cells_aki": 859,
+  "n_cells_normal": 27497,
+  "per_fold_auroc": [
+    0.8921,
+    0.8902,
+    0.8842,
+    0.8766,
+    0.9127
+  ],
+  "per_fold_auprc": [
+    0.6228,
+    0.6572,
+    0.6096,
+    0.6075,
+    0.7177
+  ],
+  "per_fold_f1": [
+    0.2532,
+    0.3073,
+    0.4228,
+    0.2641,
+    0.3799
+  ],
+  "auroc_mean": 0.8911946494403942,
+  "auroc_std": 0.012056833405355724,
+  "auprc_mean": 0.6429822161057539,
+  "auprc_std": 0.04136713668227919,
+  "f1_mean": 0.32545248246266534,
+  "f1_std": 0.06595423199137627,
+  "sensitivity_mean": 0.7881340949272406,
+  "specificity_mean": 0.8978813668600903,
+  "total_time_sec": 310.34,
+  "wall_time_sec": 312.33,
+  "composite_score": 0.7036
+}

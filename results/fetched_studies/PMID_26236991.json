@@ -1,0 +1,43 @@
+{
+  "pmid": "26236991",
+  "title": "Epithelial-to-mesenchymal transition induces cell cycle arrest and parenchymal damage in renal fibrosis.",
+  "authors": [
+    "Lovisa S",
+    "LeBleu VS",
+    "Tampe B",
+    "Sugimoto H",
+    "Vadnagara K",
+    "Carstens JL",
+    "et al."
+  ],
+  "journal": "Nat Med",
+  "year": "2015",
+  "doi": "10.1038/nm.3902",
+  "pmcid": "PMC4587560",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/26236991/",
+  "abstract": "Epithelial-to-mesenchymal transition induces cell cycle arrest and parenchymal \ndamage in renal fibrosis.",
+  "relevance_score": 0.25,
+  "pdf_path": "",
+  "uses_kidney_cell_atlas": false,
+  "atlas_evidence": "none",
+  "benchmark_role": "BACKGROUND_LITERATURE",
+  "reported_aurocs": [],
+  "reported_auprcs": [],
+  "reported_f1s": [],
+  "methods_mentioned": [],
+  "detected_species": "mouse",
+  "detected_modality": "snRNA-seq",
+  "detected_cohort_n": [
+    "48",
+    "28"
+  ],
+  "dataset_info": {
+    "species": "mouse",
+    "modality": "histology/IHC",
+    "source": "UUO model",
+    "cell_n": "N/A",
+    "note": "MODALITY DIFFERENCE: mechanistic mouse EMT study — no ML, no single-cell"
+  },
+  "dataset_differs_from_this_study": "SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; MODALITY DIFFERENCE: mechanistic mouse EMT study — no ML, no single-cell",
+  "fetched_at": "2026-04-29T16:56:12.157578"
+}

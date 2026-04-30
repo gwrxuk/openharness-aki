@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  coding-agent:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: aki_coding_agent
+    volumes:
+      - ../data:/workspace/data
+      - ../results:/workspace/results
+      - ../analysis:/workspace/analysis
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    command: >
+      --model gpt-4o --max-turns 15 --dangerously-skip-permissions -p
+      "You are the AKI Coding Agent. Use your Bash tool to execute the following steps in order:
+      1. Run: python3 /workspace/analysis/run_aki_analysis.py
+      2. After completion, run: cat /workspace/results/analysis_summary.json
+      3. Report the ROC-AUC, top genes, and permutation p-value from the results."
+    networks:
+      - aki_net
+
+  test-agent:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: aki_test_agent
+    volumes:
+      - ../data:/workspace/data
+      - ../results:/workspace/results
+      - ../analysis:/workspace/analysis
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    command: >
+      --model gpt-4o --max-turns 10 --dangerously-skip-permissions -p
+      "You are the AKI Test Agent. Use your Bash tool to validate pipeline outputs:
+      1. Run: python3 /workspace/agents/test_agent.py
+      2. Run: cat /workspace/results/test_report.json
+      3. Report pass/fail status for each test."
+    networks:
+      - aki_net
+
+networks:
+  aki_net:
+    driver: bridge

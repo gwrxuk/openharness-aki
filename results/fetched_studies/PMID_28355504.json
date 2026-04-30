@@ -1,0 +1,39 @@
+{
+  "pmid": "28355504",
+  "title": "Acute Kidney Injury in Critically Ill Children and Young Adults.",
+  "authors": [
+    "Goldstein SL",
+    "Basu RK",
+    "Kaddourah A"
+  ],
+  "journal": "N Engl J Med",
+  "year": "2017",
+  "doi": "10.1056/NEJMc1701196",
+  "pmcid": "",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/28355504/",
+  "abstract": "Acute Kidney Injury in Critically Ill Children and Young Adults.",
+  "relevance_score": 0.5,
+  "pdf_path": "",
+  "uses_kidney_cell_atlas": false,
+  "atlas_evidence": "none",
+  "benchmark_role": "BACKGROUND_LITERATURE",
+  "reported_aurocs": [],
+  "reported_auprcs": [],
+  "reported_f1s": [],
+  "methods_mentioned": [],
+  "detected_species": "mouse",
+  "detected_modality": "snRNA-seq",
+  "detected_cohort_n": [
+    "48",
+    "28"
+  ],
+  "dataset_info": {
+    "species": "human",
+    "modality": "clinical/biomarker",
+    "source": "ICU cohort",
+    "cell_n": "~766 patients",
+    "note": "MODALITY DIFFERENCE: clinical ICU cohort vs. snRNA-seq"
+  },
+  "dataset_differs_from_this_study": "MODALITY DIFFERENCE: clinical/biomarker cohort vs. transcriptomic single-cell; MODALITY DIFFERENCE: clinical ICU cohort vs. snRNA-seq",
+  "fetched_at": "2026-04-29T16:56:12.747960"
+}

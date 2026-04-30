@@ -1,0 +1,24 @@
+{
+  "iteration": 3,
+  "timestamp": "2026-04-29T16:56:27.988130",
+  "approach_id": 3,
+  "approach_name": "LASSO-RF",
+  "description": "L1-regularised logistic regression for feature selection \u2192 Random Forest",
+  "rationale": "LASSO imposes sparsity beyond DE ranking, selecting features by predictive weight rather than fold-change magnitude. Reduces collinear gene redundancy.",
+  "config": {
+    "feature_method": "lasso",
+    "n_features": null,
+    "model": "random_forest",
+    "model_params": {
+      "n_estimators": 200,
+      "max_depth": 8,
+      "class_weight": "balanced"
+    },
+    "lasso_C": 0.05
+  },
+  "reviewer_context": {
+    "previous_decision": "ACCEPT",
+    "best_auroc_so_far": 0.921003770220277,
+    "hint": "Continue improving. Consider ensemble or stacking to combine the gains seen in this iteration with previous approaches."
+  }
+}

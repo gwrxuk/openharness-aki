@@ -1,0 +1,74 @@
+version: "3.9"
+
+# OpenHarness Multi-Agent Iterative AKI Pipeline
+# Agents: SearchAgent → PlanAgent → CodingAgent → ReviewerAgent (5-7 iterations)
+#
+# Usage:
+#   docker compose -f docker/docker-compose-iterative.yml up --build
+#
+# All iteration logs written to ./results/
+# Full orchestration log: ./results/orchestrator_full_log.txt
+# Final report:           ./results/final_report.json
+
+services:
+
+  # ── Main orchestrator: runs the full SearchAgent → iterative loop ───────────
+  orchestrator:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: aki_orchestrator
+    entrypoint: ["python3"]
+    command:
+      - "/workspace/agents/orchestrator.py"
+      - "--mode"
+      - "oh"
+      - "--min-iterations"
+      - "5"
+      - "--max-iterations"
+      - "7"
+    volumes:
+      - ../data:/workspace/data
+      - ../results:/workspace/results
+      - ../agents:/workspace/agents
+      - ../analysis:/workspace/analysis
+      # Mount host OpenHarness settings (OpenAI provider config)
+      - ${HOME}/.openharness:/root/.openharness
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PYTHONPATH=/workspace
+      - OMP_NUM_THREADS=4
+    networks:
+      - aki_net
+
+  # ── Standalone run (no OH API key needed) ────────────────────────────────────
+  orchestrator-standalone:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: aki_orchestrator_standalone
+    entrypoint: ["python3"]
+    command:
+      - "/workspace/agents/orchestrator.py"
+      - "--mode"
+      - "standalone"
+      - "--min-iterations"
+      - "5"
+      - "--max-iterations"
+      - "7"
+    volumes:
+      - ../data:/workspace/data
+      - ../results:/workspace/results
+      - ../agents:/workspace/agents
+      - ../analysis:/workspace/analysis
+    environment:
+      - PYTHONPATH=/workspace
+      - OMP_NUM_THREADS=4
+    networks:
+      - aki_net
+    profiles:
+      - standalone
+
+networks:
+  aki_net:
+    driver: bridge

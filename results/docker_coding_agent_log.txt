@@ -1,0 +1,21 @@
+=== DOCKER CODING AGENT — Wed Apr 29 11:21:16 CST 2026 ===
+
+Here are the summarized results from the analysis:
+
+- **ROC-AUC Scores:**
+  - **RandomForest:** 0.8841 ± 0.0191
+  - **XGBoost:** 0.8702 ± 0.0177
+  - **LogisticRegression:** 0.7576 ± 0.0159
+  - Best model: **RandomForest** with a training AUC of 0.8858
+
+- **Top Predictive Genes:**
+  1. TACSTD2 (Importance: 0.2185)
+  2. KIAA0101 (Importance: 0.1610)
+  3. PTTG1 (Importance: 0.0972)
+  4. CDK1 (Importance: 0.0674)
+  5. BGN (Importance: 0.0443)
+
+- **Permutation p-value:** 0.0000
+
+These highlights indicate a robust model performance with RandomForest proving to be the best model based on ROC-AUC values and permutation tests. The critical genes identified are potential biomarkers for AKI prediction.
+=== CODING AGENT DONE — Wed Apr 29 11:22:54 CST 2026 ===

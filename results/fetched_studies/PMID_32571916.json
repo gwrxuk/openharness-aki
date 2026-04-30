@@ -1,0 +1,41 @@
+{
+  "pmid": "32571916",
+  "title": "Cell profiling of mouse acute kidney injury reveals conserved cellular responses to injury.",
+  "authors": [
+    "Kirita Y",
+    "Wu H",
+    "Uchimura K",
+    "Wilson PC",
+    "Humphreys BD"
+  ],
+  "journal": "Proc Natl Acad Sci U S A",
+  "year": "2020",
+  "doi": "10.1073/pnas.2005477117",
+  "pmcid": "PMC7355049",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32571916/",
+  "abstract": "Cell profiling of mouse acute kidney injury reveals conserved cellular responses \nto injury.",
+  "relevance_score": 0.75,
+  "pdf_path": "",
+  "uses_kidney_cell_atlas": false,
+  "atlas_evidence": "none",
+  "benchmark_role": "BACKGROUND_LITERATURE",
+  "reported_aurocs": [],
+  "reported_auprcs": [],
+  "reported_f1s": [],
+  "methods_mentioned": [],
+  "detected_species": "mouse",
+  "detected_modality": "snRNA-seq",
+  "detected_cohort_n": [
+    "48",
+    "28"
+  ],
+  "dataset_info": {
+    "species": "mouse",
+    "modality": "scRNA-seq",
+    "source": "IRI model",
+    "cell_n": "~15,000",
+    "note": "SPECIES DIFFERENCE: mouse IRI model — different species and injury model"
+  },
+  "dataset_differs_from_this_study": "SPECIES DIFFERENCE: mouse model vs. human Kidney Cell Atlas; SPECIES DIFFERENCE: mouse IRI model — different species and injury model",
+  "fetched_at": "2026-04-29T16:55:54.566994"
+}

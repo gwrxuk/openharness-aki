@@ -1,0 +1,43 @@
+{
+  "iteration": 6,
+  "approach_name": "Stack-RF-XGB",
+  "description": "Stacking ensemble: RF + XGBoost base learners; Logistic Regression meta-learner",
+  "timestamp": "2026-04-29T17:02:19.924854",
+  "feature_method": "top_de",
+  "n_features": 75,
+  "model": "stacking",
+  "n_cells_aki": 859,
+  "n_cells_normal": 27497,
+  "per_fold_auroc": [
+    0.9012,
+    0.892,
+    0.8857,
+    0.8942,
+    0.9433
+  ],
+  "per_fold_auprc": [
+    0.7653,
+    0.7575,
+    0.7374,
+    0.7505,
+    0.8447
+  ],
+  "per_fold_f1": [
+    0.6192,
+    0.7074,
+    0.6427,
+    0.514,
+    0.6623
+  ],
+  "auroc_mean": 0.9032760008197572,
+  "auroc_std": 0.020608250166939207,
+  "auprc_mean": 0.771066482200679,
+  "auprc_std": 0.03793248078754222,
+  "f1_mean": 0.629118095489427,
+  "f1_std": 0.06447045064106204,
+  "sensitivity_mean": 0.8113695090439277,
+  "specificity_mean": 0.9750877680239383,
+  "total_time_sec": 22.52,
+  "wall_time_sec": 23.34,
+  "composite_score": 0.8088
+}

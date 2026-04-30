@@ -1,0 +1,35 @@
+{
+  "pmid": "41334180",
+  "title": "Cell-type specific single-cell signatures reveal nephrotoxic drug effects.",
+  "authors": [
+    "Kuchi A",
+    "Cortina JMA",
+    "Liu H",
+    "Fatapour Y",
+    "Berkowitz J",
+    "Tatonetti NP"
+  ],
+  "journal": "Comput Struct Biotechnol J",
+  "year": "2025",
+  "doi": "10.1016/j.csbj.2025.11.012",
+  "pmcid": "PMC12666064",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/41334180/",
+  "abstract": "Cell-type specific single-cell signatures reveal nephrotoxic drug effects.",
+  "relevance_score": 0.286,
+  "pdf_path": "",
+  "uses_kidney_cell_atlas": false,
+  "atlas_evidence": "none",
+  "benchmark_role": "BACKGROUND_LITERATURE",
+  "reported_aurocs": [],
+  "reported_auprcs": [],
+  "reported_f1s": [],
+  "methods_mentioned": [
+    "XGBoost"
+  ],
+  "detected_species": "human/unknown",
+  "detected_modality": "scRNA-seq",
+  "detected_cohort_n": [],
+  "dataset_info": {},
+  "dataset_differs_from_this_study": "Dataset characteristics similar or unverifiable from abstract",
+  "fetched_at": "2026-04-29T16:55:47.237111"
+}

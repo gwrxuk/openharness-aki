@@ -1,0 +1,22 @@
+{
+  "validation_dataset": "Lake et al. 2023 (PMID 37468583) \u2014 KPMP AKI biopsy atlas",
+  "training_dataset": "Kidney Cell Atlas Mature_Full_v2.1 (Stewart et al. 2019)",
+  "model": "LASSO-RF (iteration 3 strategy, trained on full KCA)",
+  "positive_class": "aPT (injured PT) from AKI-confirmed patients",
+  "negative_class": "PT-S1/S2 + PT-S3 from LivingDonor (healthy reference)",
+  "n_positive": 3181,
+  "n_negative": 3546,
+  "n_features_used": 193,
+  "timestamp": "2026-04-30T11:00:03.951826",
+  "wall_time_sec": 28.8,
+  "auroc": 0.9866,
+  "auprc": 0.9842,
+  "f1": 0.9406,
+  "sensitivity": 0.9626,
+  "specificity": 0.9244,
+  "threshold": 0.317,
+  "tp": 3062,
+  "fp": 268,
+  "fn": 119,
+  "tn": 3278
+}
