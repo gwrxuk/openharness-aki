@@ -1,0 +1,51 @@
+{
+  "source": "geo",
+  "uid": "308153337",
+  "accession": "GSM8153337",
+  "title": "Kidney, spatial transcriptomics, male, control, nicotinamide riboside",
+  "summary": "Kidney",
+  "gdstype": "",
+  "taxon": "Mus musculus",
+  "n_samples": "",
+  "platform": "",
+  "pubmed_ids": [],
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8153337",
+  "ftp": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8153nnn/GSM8153337/",
+  "modalities": [
+    "bulk_RNA-seq",
+    "spatial_transcriptomics"
+  ],
+  "ml_score": 0.2,
+  "ml_recommendations": [
+    {
+      "preferred_models": [
+        "elastic_net",
+        "svm_rbf",
+        "random_forest",
+        "deseq2_lasso"
+      ],
+      "feature_strategies": [
+        "deseq2_de",
+        "lasso",
+        "pca_50"
+      ],
+      "rationale": "Lower dimensionality than single-cell. Elastic-net regularisation handles collinear gene expression well. SVM with RBF kernel often competitive. DE gene pre-selection still beneficial.",
+      "target_metric": "AUROC"
+    },
+    {
+      "preferred_models": [
+        "xgboost",
+        "random_forest",
+        "gnn_spatial"
+      ],
+      "feature_strategies": [
+        "spatial_de",
+        "neighborhood_features",
+        "pca"
+      ],
+      "rationale": "Spatial coordinates add a graph-based feature dimension. Graph neural networks (GNN) can incorporate neighbor information. For simpler baselines, XGB on spatially DE genes with neighbourhood composition features.",
+      "target_metric": "AUROC"
+    }
+  ],
+  "fetched_at": "2026-05-08T06:22:12.622562"
+}

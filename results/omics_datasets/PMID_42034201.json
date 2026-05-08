@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "42034201",
+  "title": "Intragraft clonal expansion of cytotoxic CD8(+) and CD4(+) T cells in antibody-mediated kidney transplant rejection.",
+  "authors": [
+    "Vaulet T",
+    "Lamarthée B",
+    "Callemeyn J",
+    "Koshy P",
+    "Anglicheau D",
+    "et al."
+  ],
+  "journal": "Kidney Int",
+  "year": "2026",
+  "doi": "10.1016/j.kint.2026.03.012",
+  "pmcid": "",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42034201/",
+  "abstract": "Intragraft clonal expansion of cytotoxic CD8(+) and CD4(+) T cells in \nantibody-mediated kidney transplant rejection.",
+  "query": "kidney spatial transcriptomics cell type deconvolution",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.0,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:07.357857"
+}

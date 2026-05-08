@@ -1,0 +1,44 @@
+{
+  "source": "pubmed",
+  "pmid": "42033552",
+  "title": "Integrated bioinformatics analysis and clinical validation identifies TNFSF14 and CD40 as novel biomarkers for chronic kidney disease progression and tubulointerstitial injury.",
+  "authors": [
+    "Gu X",
+    "Lu Y",
+    "Sha H",
+    "Zhang H",
+    "Chen H",
+    "et al."
+  ],
+  "journal": "Int Urol Nephrol",
+  "year": "2026",
+  "doi": "10.1007/s11255-026-05138-9",
+  "pmcid": "",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42033552/",
+  "abstract": "Integrated bioinformatics analysis and clinical validation identifies TNFSF14 \nand CD40 as novel biomarkers for chronic kidney disease progression and \ntubulointerstitial injury.",
+  "query": "renal tubular injury transcriptomics biomarker prediction model",
+  "modalities": [
+    "multi-omics"
+  ],
+  "ml_score": 0.45,
+  "sample_size": "unknown",
+  "ml_recommendations": [
+    {
+      "preferred_models": [
+        "mofa_xgb",
+        "snf_rf",
+        "late_fusion_vote",
+        "early_fusion_lasso"
+      ],
+      "feature_strategies": [
+        "mofa_latent",
+        "snf_graph",
+        "concatenate_pca",
+        "lasso_each_block"
+      ],
+      "rationale": "Multi-block integration: MOFA+ or SNF latent factors as features, then standard classifier. Late fusion (train per-modality, vote) is robust when sample sizes differ across modalities. Early concatenation + LASSO is a strong baseline.",
+      "target_metric": "AUROC"
+    }
+  ],
+  "fetched_at": "2026-05-08T06:22:00.290834"
+}

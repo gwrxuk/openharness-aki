@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "41605921",
+  "title": "Injured epithelial cell states impact kidney allograft survival after T-cell-mediated rejection.",
+  "authors": [
+    "Pfefferkorn AM",
+    "Jahn L",
+    "Gauthier PT",
+    "Kulow VA",
+    "Roeles J",
+    "et al."
+  ],
+  "journal": "Nat Commun",
+  "year": "2026",
+  "doi": "10.1038/s41467-026-68397-1",
+  "pmcid": "PMC12852170",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/41605921/",
+  "abstract": "Injured epithelial cell states impact kidney allograft survival after \nT-cell-mediated rejection.",
+  "query": "kidney spatial transcriptomics cell type deconvolution",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.0,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:07.359080"
+}

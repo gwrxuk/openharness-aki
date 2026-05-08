@@ -1,0 +1,89 @@
+================================================================
+  [OMICS DISCOVERY] Kidney Omics Literature & Dataset Search
+  Started : 2026-05-08 06:21:57
+  Output  : /home/ubuntu/ky/omics/results/omics_datasets
+================================================================
+
+  ── Phase 1: PubMed Omics Literature ──
+
+  Query: "kidney AKI single-cell RNA-seq omics machine learning classification"
+  No results.
+
+  Query: "renal tubular injury transcriptomics biomarker prediction model"
+    PMID 42033552 | ['multi-omics'] | score=0.45 | Integrated bioinformatics analysis and clinical va
+    PMID 41756296 | ['unknown'] | score=0.30 | Identification of lactylation and its hub genes in
+    Skip non-kidney PMID 41300756: Genomics and Multi-Omics Perspectives on the Pathogenes
+    PMID 40376698 | ['unknown'] | score=0.30 | Identification and Validation of Tryptophan Metabo
+    PMID 40270593 | ['unknown'] | score=0.25 | S100A8/A9 high-expression macrophages mediate rena
+    PMID 38805402 | ['unknown'] | score=0.55 | Urinary cytokeratin 20 as a predictor for chronic 
+    PMID 37616058 | ['unknown'] | score=0.30 | Endogenous adenine mediates kidney injury in diabe
+    PMID 34547172 | ['unknown'] | score=0.00 | LncRNA TUG1 attenuates ischaemia-reperfusion-induc
+
+  Query: "acute kidney injury proteomics metabolomics machine learning"
+    Skip non-kidney PMID 41683712: Artificial Intelligence in Nephrology-State of the Art 
+
+  Query: "kidney disease ATAC-seq epigenomics chromatin accessibility machine learning"
+  No results.
+
+  Query: "chronic kidney disease multi-omics integration GWAS eQTL"
+    Skip non-kidney PMID 42068367: Dissecting Immune Mechanisms Underlying Sarcopenia Usin
+    PMID 41990104 | ['multi-omics'] | score=0.20 | Systematic prioritization of potential therapeutic
+    PMID 41972152 | ['multi-omics'] | score=0.45 | Genetically prioritized mitochondrial regulators o
+    Skip non-kidney PMID 35931049: A multi-layer functional genomic analysis to understand
+
+  Query: "kidney spatial transcriptomics cell type deconvolution"
+    PMID 42034201 | ['unknown'] | score=0.00 | Intragraft clonal expansion of cytotoxic CD8(+) an
+    PMID 41605921 | ['unknown'] | score=0.00 | Injured epithelial cell states impact kidney allog
+    PMID 41071604 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | score=0.20 | Spatial Transcriptomics Reveals Injured Cells, Sig
+    PMID 41043857 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | score=0.50 | Spatial transcriptomic profiling of metastatic ren
+    Skip non-kidney PMID 39970279: Precise gene expression deconvolution in spatial transc
+    Skip non-kidney PMID 39117342: SpatialCTD: A Large-Scale Tumor Microenvironment Spatia
+    PMID 39048792 | ['multi-omics'] | score=0.20 | Single-cell multi-omic and spatial profiling of hu
+    PMID 38640017 | ['unknown'] | score=0.00 | The Clinical Relevance of the Infiltrating Immune 
+
+  Query: "AKI CKD metabolomics urine biomarker random forest XGBoost"
+  No results.
+
+  Query: "kidney injury urinary proteomics mass spectrometry deep learning"
+  No results.
+
+  PubMed phase: 15 kidney-relevant records collected.
+
+  ── Phase 2: NCBI GEO Dataset Search ──
+
+  GEO query: "kidney AKI scRNA-seq"
+  No GEO results.
+
+  GEO query: "renal tubular injury RNA-seq"
+  No GEO results.
+
+  GEO query: "acute kidney injury proteomics"
+  No GEO results.
+
+  GEO query: "kidney ATAC-seq chromatin"
+  No GEO results.
+
+  GEO query: "renal metabolomics"
+  No GEO results.
+
+  GEO query: "kidney spatial transcriptomics"
+    GEO GSE268847 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | n=2 | score=0.45 | Implant renal injury-responsive cells to supp
+    GEO GSE261872 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | n=4 | score=0.75 | NAD+ prevents chronic kidney disease by activ
+    GEO GSE261545 | ['scRNA-seq', 'bulk_RNA-seq', 'spatial_transcriptomics', 'multi-omics'] | n=1 | score=0.20 | Histopathological-based analysis of human kid
+    GEO GSM8153339 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | n= | score=0.20 | Kidney, spatial transcriptomics, male, Alport
+    GEO GSM8153338 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | n= | score=0.20 | Kidney, spatial transcriptomics, male, Alport
+    GEO GSM8153337 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | n= | score=0.20 | Kidney, spatial transcriptomics, male, contro
+
+  GEO phase: 6 kidney-relevant datasets collected.
+
+  ── Phase 3: ML Recommendation Synthesis ──
+  Dominant modality : bulk_RNA-seq
+  Top modalities    : [('bulk_RNA-seq', 8, 0.338), ('spatial_transcriptomics', 8, 0.338), ('unknown', 9, 0.189), ('multi-omics', 5, 0.3), ('scRNA-seq', 1, 0.2)]
+  Recommended models: ['elastic_net', 'svm_rbf', 'random_forest', 'deseq2_lasso', 'xgboost', 'gnn_spatial']
+  Feature strategies: ['deseq2_de', 'lasso', 'pca_50', 'spatial_de', 'neighborhood_features', 'pca']
+  Top datasets (by ML score):
+    [geo] GSE261872 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | score=0.75 | NAD+ prevents chronic kidney disease by activating
+    [pubmed] 38805402 | ['unknown'] | score=0.55 | Urinary cytokeratin 20 as a predictor for chronic 
+    [pubmed] 41043857 | ['bulk_RNA-seq', 'spatial_transcriptomics'] | score=0.50 | Spatial transcriptomic profiling of metastatic ren
+    [pubmed] 42033552 | ['multi-omics'] | score=0.45 | Integrated bioinformatics analysis and clinical va
+    [pubmed] 41972152 | ['multi-omics'] | score=0.45 | Genetically prioritized mitochondrial regulators o

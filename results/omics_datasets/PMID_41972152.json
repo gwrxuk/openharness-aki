@@ -1,0 +1,44 @@
+{
+  "source": "pubmed",
+  "pmid": "41972152",
+  "title": "Genetically prioritized mitochondrial regulators of advanced renal failure: multi-omic Mendelian randomization and biological plausibility assessment in allograft fibrosis.",
+  "authors": [
+    "Shen Q",
+    "Ding R",
+    "Wen Z",
+    "Feng D",
+    "Zhang J",
+    "et al."
+  ],
+  "journal": "Front Immunol",
+  "year": "2026",
+  "doi": "10.3389/fimmu.2026.1783844",
+  "pmcid": "PMC13065693",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/41972152/",
+  "abstract": "Genetically prioritized mitochondrial regulators of advanced renal failure: \nmulti-omic Mendelian randomization and biological plausibility assessment in \nallograft fibrosis.",
+  "query": "chronic kidney disease multi-omics integration GWAS eQTL",
+  "modalities": [
+    "multi-omics"
+  ],
+  "ml_score": 0.45,
+  "sample_size": "unknown",
+  "ml_recommendations": [
+    {
+      "preferred_models": [
+        "mofa_xgb",
+        "snf_rf",
+        "late_fusion_vote",
+        "early_fusion_lasso"
+      ],
+      "feature_strategies": [
+        "mofa_latent",
+        "snf_graph",
+        "concatenate_pca",
+        "lasso_each_block"
+      ],
+      "rationale": "Multi-block integration: MOFA+ or SNF latent factors as features, then standard classifier. Late fusion (train per-modality, vote) is robust when sample sizes differ across modalities. Early concatenation + LASSO is a strong baseline.",
+      "target_metric": "AUROC"
+    }
+  ],
+  "fetched_at": "2026-05-08T06:22:05.114716"
+}

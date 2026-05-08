@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "38640017",
+  "title": "The Clinical Relevance of the Infiltrating Immune Cell Composition in Kidney Transplant Rejection.",
+  "authors": [
+    "Vaulet T",
+    "Callemeyn J",
+    "Lamarthée B",
+    "Antoranz A",
+    "Debyser T",
+    "et al."
+  ],
+  "journal": "J Am Soc Nephrol",
+  "year": "2024",
+  "doi": "10.1681/ASN.0000000000000350",
+  "pmcid": "PMC11230711",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/38640017/",
+  "abstract": "The Clinical Relevance of the Infiltrating Immune Cell Composition in Kidney \nTransplant Rejection.",
+  "query": "kidney spatial transcriptomics cell type deconvolution",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.0,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:07.365505"
+}

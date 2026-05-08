@@ -1,0 +1,51 @@
+{
+  "source": "geo",
+  "uid": "200268847",
+  "accession": "GSE268847",
+  "title": "Implant renal injury-responsive cells to supplement erythropoietin and protect kidney [Spatial Transcriptomics]",
+  "summary": "Anemia poses a life-threatening risk to individuals with chronic kidney diseases (CKDs). Insufficient production of erythropoietin (EPO) from injured kidney is the major reason for anemia, while lack of EPO would further aggravate the kidney injury and make a “vicious cycle”. In this study, we dissected the change of endogenous EPO signaling in injured kidney by spatial transcriptomic analysis and validated the dual beneficial effects of local recombinant EPO administration on both anemia correction and kidney protection. Next, we constructed an injury-responsive EPO producing (iREP) element to sense the kidney damage signal and drive the synthesis and secretion of native EPO. After intra-renal implantation of iREP engineered HEK-293T embryonic kidney cells, the mouse kidney would automati",
+  "gdstype": "Other",
+  "taxon": "Homo sapiens; Mus musculus",
+  "n_samples": 2,
+  "platform": "",
+  "pubmed_ids": [],
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE268847",
+  "ftp": "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE268nnn/GSE268847/",
+  "modalities": [
+    "bulk_RNA-seq",
+    "spatial_transcriptomics"
+  ],
+  "ml_score": 0.45,
+  "ml_recommendations": [
+    {
+      "preferred_models": [
+        "elastic_net",
+        "svm_rbf",
+        "random_forest",
+        "deseq2_lasso"
+      ],
+      "feature_strategies": [
+        "deseq2_de",
+        "lasso",
+        "pca_50"
+      ],
+      "rationale": "Lower dimensionality than single-cell. Elastic-net regularisation handles collinear gene expression well. SVM with RBF kernel often competitive. DE gene pre-selection still beneficial.",
+      "target_metric": "AUROC"
+    },
+    {
+      "preferred_models": [
+        "xgboost",
+        "random_forest",
+        "gnn_spatial"
+      ],
+      "feature_strategies": [
+        "spatial_de",
+        "neighborhood_features",
+        "pca"
+      ],
+      "rationale": "Spatial coordinates add a graph-based feature dimension. Graph neural networks (GNN) can incorporate neighbor information. For simpler baselines, XGB on spatially DE genes with neighbourhood composition features.",
+      "target_metric": "AUROC"
+    }
+  ],
+  "fetched_at": "2026-05-08T06:22:12.619380"
+}

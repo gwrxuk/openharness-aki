@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "41756296",
+  "title": "Identification of lactylation and its hub genes in contributing immune activation and renal allograft fibrosis by integrative bioinformatics and machine learning.",
+  "authors": [
+    "Yuan F",
+    "Huang J",
+    "Huang D",
+    "Li K",
+    "Zhou S",
+    "et al."
+  ],
+  "journal": "Front Immunol",
+  "year": "2026",
+  "doi": "10.3389/fimmu.2026.1741864",
+  "pmcid": "PMC12932934",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/41756296/",
+  "abstract": "Identification of lactylation and its hub genes in contributing immune \nactivation and renal allograft fibrosis by integrative bioinformatics and \nmachine learning.",
+  "query": "renal tubular injury transcriptomics biomarker prediction model",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.3,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:00.292372"
+}

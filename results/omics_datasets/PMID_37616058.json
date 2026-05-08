@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "37616058",
+  "title": "Endogenous adenine mediates kidney injury in diabetic models and predicts diabetic kidney disease in patients.",
+  "authors": [
+    "Sharma K",
+    "Zhang G",
+    "Hansen J",
+    "Bjornstad P",
+    "Lee HJ",
+    "et al."
+  ],
+  "journal": "J Clin Invest",
+  "year": "2023",
+  "doi": "10.1172/JCI170341",
+  "pmcid": "PMC10575723",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/37616058/",
+  "abstract": "Endogenous adenine mediates kidney injury in diabetic models and predicts \ndiabetic kidney disease in patients.",
+  "query": "renal tubular injury transcriptomics biomarker prediction model",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.3,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:00.297472"
+}

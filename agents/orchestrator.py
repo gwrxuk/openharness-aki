@@ -2,10 +2,15 @@
 OpenHarness Multi-Agent Orchestrator for AKI Gene Expression Analysis.
 
 Architecture:
-  SearchAgent  → PubMed query (NCBI E-utilities), extracts literature AUROCs
-  PlanAgent    → selects ML strategy for each iteration
-  CodingAgent  → executes iterative_pipeline.py with the plan config
-  ReviewerAgent→ compares metrics to best; ACCEPT / REPLAN / COMPLETE
+  OmicsDiscoveryAgent → PubMed + NCBI GEO search for kidney omics journals
+                        and datasets; classifies by modality; emits ML
+                        recommendations consumed by PlanAgent
+  SearchAgent         → AKI-specific PubMed query; extracts literature AUROCs
+  PlanAgent           → selects ML strategy per iteration (base pool of 7 +
+                        up to 3 omics-aware extensions when discovery finds
+                        high-scoring datasets)
+  CodingAgent         → executes iterative_pipeline.py with the plan config
+  ReviewerAgent       → compares metrics to best; ACCEPT / REPLAN / COMPLETE
 
 Loop: min_iterations=5, max_iterations=7
   - Always runs iterations 1 → min_iterations
@@ -82,6 +87,50 @@ class Logger:
 
 
 # ─── Agent call wrappers ──────────────────────────────────────────────────────
+
+def run_omics_discovery_agent(mode: str, logger: Logger) -> dict:
+    """
+    Phase 0: OmicsDiscoveryAgent — broad kidney omics search (PubMed + GEO).
+    Results feed into plan_agent.py to extend the strategy pool with omics-aware
+    approaches (pathway scores, multi-omics fusion, deep embedding).
+    """
+    logger.section("OMICS DISCOVERY AGENT — Kidney Omics Journal & Dataset Search")
+
+    if mode == "oh":
+        logger.log("  Mode: OpenHarness OH agent")
+        prompt = (
+            "You are the AKI Omics Discovery Agent. "
+            "Run: python3 /workspace/agents/omics_discovery.py "
+            "Then read /workspace/results/omics_discovery.json and report: "
+            "total records found, dominant omics modality, top 3 recommended ML models, "
+            "and the 3 highest-scoring GEO datasets."
+        )
+        oh_out = _oh_agent("OmicsDiscoveryAgent", prompt, max_turns=5)
+        logger.log(oh_out)
+
+    from agents.omics_discovery import main as omics_main
+    try:
+        result = omics_main(verbose=False)
+    except Exception as e:
+        logger.log(f"  OmicsDiscovery error: {e}. Skipping — plan agent will use base strategy pool.")
+        return {}
+
+    rec = result.get("recommendation", {})
+    logger.log(f"  Total records     : {result.get('total_records', 0)}")
+    logger.log(f"    PubMed papers   : {result.get('pubmed_records', 0)}")
+    logger.log(f"    GEO datasets    : {result.get('geo_records', 0)}")
+    logger.log(f"  Dominant modality : {rec.get('dominant_modality', 'N/A')}")
+    logger.log(f"  Top modalities    : {rec.get('top_modalities', [])[:3]}")
+    logger.log(f"  Recommended models: {rec.get('recommended_models', [])[:4]}")
+    logger.log(f"  Recommended feats : {rec.get('recommended_features', [])[:3]}")
+    logger.log(f"  Narrative         : {rec.get('narrative', '')}")
+    if rec.get("top_datasets"):
+        logger.log("  Top datasets (by ML score):")
+        for ds in rec["top_datasets"][:3]:
+            logger.log(f"    [{ds['source']}] {ds['id']} | {ds.get('modality',[])} "
+                       f"| score={ds.get('ml_score',0):.2f} | {ds.get('title','')[:50]}")
+    return result
+
 
 def run_search_agent(mode: str, logger: Logger) -> dict:
     logger.section("SEARCH AGENT — PubMed Literature Query")
@@ -239,6 +288,17 @@ def orchestrate(mode: str = "standalone",
     logger.log(f"  Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     logger.log("=" * 60)
 
+    # ── Phase 0: Omics Discovery Agent ───────────────────────────────────────
+    omics_result = run_omics_discovery_agent(mode, logger)
+    if omics_result:
+        rec = omics_result.get("recommendation", {})
+        logger.log(f"\n  Omics discovery complete. Dominant modality: "
+                   f"{rec.get('dominant_modality','N/A')}  |  "
+                   f"Strategy pool extended: "
+                   f"{'YES (omics strategies unlocked)' if omics_result.get('total_records',0) > 0 else 'NO'}")
+    else:
+        logger.log("\n  Omics discovery skipped — using base 7-strategy pool.")
+
     # ── Phase 1: Search Agent ─────────────────────────────────────────────────
     search_result = run_search_agent(mode, logger)
     target_auroc  = search_result.get("target_auroc", 0.92)
@@ -356,6 +416,14 @@ def orchestrate(mode: str = "standalone",
         "best_approach":         best_metrics,
         "iteration_summaries":   iteration_summaries,
         "log_file":              str(log_path),
+        "omics_discovery": {
+            "total_records":    omics_result.get("total_records", 0),
+            "pubmed_records":   omics_result.get("pubmed_records", 0),
+            "geo_records":      omics_result.get("geo_records", 0),
+            "dominant_modality": omics_result.get("recommendation", {}).get("dominant_modality"),
+            "recommended_models": omics_result.get("recommendation", {}).get("recommended_models", []),
+            "top_datasets":     omics_result.get("recommendation", {}).get("top_datasets", [])[:5],
+        } if omics_result else {},
     }
     with open(RESULTS / "final_report.json", "w") as f:
         json.dump(final_report, f, indent=2)

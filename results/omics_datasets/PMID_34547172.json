@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "34547172",
+  "title": "LncRNA TUG1 attenuates ischaemia-reperfusion-induced apoptosis of renal tubular epithelial cells by sponging miR-144-3p via targeting Nrf2.",
+  "authors": [
+    "Zhao S",
+    "Chen W",
+    "Li W",
+    "Yu W",
+    "Li S",
+    "et al."
+  ],
+  "journal": "J Cell Mol Med",
+  "year": "2021",
+  "doi": "10.1111/jcmm.16924",
+  "pmcid": "PMC8505827",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/34547172/",
+  "abstract": "LncRNA TUG1 attenuates ischaemia-reperfusion-induced apoptosis of renal tubular \nepithelial cells by sponging miR-144-3p via targeting Nrf2.",
+  "query": "renal tubular injury transcriptomics biomarker prediction model",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.0,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:00.298706"
+}

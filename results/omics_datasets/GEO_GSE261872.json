@@ -1,0 +1,51 @@
+{
+  "source": "geo",
+  "uid": "200261872",
+  "accession": "GSE261872",
+  "title": "NAD+ prevents chronic kidney disease by activating renal tubular metabolism - spatial transcriptomics",
+  "summary": "Chronic kidney disease (CKD) is associated with renal metabolic disturbances, including impaired fatty acid oxidation (FAO). Nicotinamide adenine dinucleotide (NAD+) is a small molecule that participates in hundreds of metabolism-related reactions. NAD+ levels are decreased in CKD, and NAD+ supplementation is protective. However, both the mechanism of how NAD+ supplementation protects from CKD, as well as the cell types involved, are poorly understood. Using a mouse model of Alport syndrome, we show that nicotinamide riboside (NR), an NAD+ precursor, stimulates renal peroxisome proliferator-activated receptor α signaling and restores FAO in the proximal tubules, thereby protecting from CKD in both sexes. Bulk RNA-sequencing shows that renal metabolic pathways are impaired in Alport mice an",
+  "gdstype": "Other",
+  "taxon": "Mus musculus",
+  "n_samples": 4,
+  "platform": "",
+  "pubmed_ids": [],
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261872",
+  "ftp": "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE261nnn/GSE261872/",
+  "modalities": [
+    "bulk_RNA-seq",
+    "spatial_transcriptomics"
+  ],
+  "ml_score": 0.75,
+  "ml_recommendations": [
+    {
+      "preferred_models": [
+        "elastic_net",
+        "svm_rbf",
+        "random_forest",
+        "deseq2_lasso"
+      ],
+      "feature_strategies": [
+        "deseq2_de",
+        "lasso",
+        "pca_50"
+      ],
+      "rationale": "Lower dimensionality than single-cell. Elastic-net regularisation handles collinear gene expression well. SVM with RBF kernel often competitive. DE gene pre-selection still beneficial.",
+      "target_metric": "AUROC"
+    },
+    {
+      "preferred_models": [
+        "xgboost",
+        "random_forest",
+        "gnn_spatial"
+      ],
+      "feature_strategies": [
+        "spatial_de",
+        "neighborhood_features",
+        "pca"
+      ],
+      "rationale": "Spatial coordinates add a graph-based feature dimension. Graph neural networks (GNN) can incorporate neighbor information. For simpler baselines, XGB on spatially DE genes with neighbourhood composition features.",
+      "target_metric": "AUROC"
+    }
+  ],
+  "fetched_at": "2026-05-08T06:22:12.620636"
+}

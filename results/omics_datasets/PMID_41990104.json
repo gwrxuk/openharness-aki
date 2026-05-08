@@ -1,0 +1,44 @@
+{
+  "source": "pubmed",
+  "pmid": "41990104",
+  "title": "Systematic prioritization of potential therapeutic targets for glomerulonephritis using multi-omics Mendelian randomization.",
+  "authors": [
+    "Li G",
+    "Jianhan F",
+    "Gu J",
+    "Wang Y",
+    "Liu J",
+    "et al."
+  ],
+  "journal": "PLoS Comput Biol",
+  "year": "2026",
+  "doi": "10.1371/journal.pcbi.1014174",
+  "pmcid": "PMC13108903",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/41990104/",
+  "abstract": "Systematic prioritization of potential therapeutic targets for \nglomerulonephritis using multi-omics Mendelian randomization.",
+  "query": "chronic kidney disease multi-omics integration GWAS eQTL",
+  "modalities": [
+    "multi-omics"
+  ],
+  "ml_score": 0.2,
+  "sample_size": "unknown",
+  "ml_recommendations": [
+    {
+      "preferred_models": [
+        "mofa_xgb",
+        "snf_rf",
+        "late_fusion_vote",
+        "early_fusion_lasso"
+      ],
+      "feature_strategies": [
+        "mofa_latent",
+        "snf_graph",
+        "concatenate_pca",
+        "lasso_each_block"
+      ],
+      "rationale": "Multi-block integration: MOFA+ or SNF latent factors as features, then standard classifier. Late fusion (train per-modality, vote) is robust when sample sizes differ across modalities. Early concatenation + LASSO is a strong baseline.",
+      "target_metric": "AUROC"
+    }
+  ],
+  "fetched_at": "2026-05-08T06:22:05.112375"
+}

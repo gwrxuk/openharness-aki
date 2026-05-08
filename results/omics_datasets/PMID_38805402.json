@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "38805402",
+  "title": "Urinary cytokeratin 20 as a predictor for chronic kidney disease following acute kidney injury.",
+  "authors": [
+    "Ma R",
+    "Ouyang H",
+    "Meng S",
+    "Liu J",
+    "Tian J",
+    "et al."
+  ],
+  "journal": "JCI Insight",
+  "year": "2024",
+  "doi": "10.1172/jci.insight.180326",
+  "pmcid": "PMC11383368",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/38805402/",
+  "abstract": "Urinary cytokeratin 20 as a predictor for chronic kidney disease following acute \nkidney injury.",
+  "query": "renal tubular injury transcriptomics biomarker prediction model",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.55,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:00.296265"
+}

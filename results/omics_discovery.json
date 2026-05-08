@@ -1,0 +1,490 @@
+{
+  "search_timestamp": "2026-05-08T06:22:12.622890",
+  "pubmed_queries": [
+    "kidney AKI single-cell RNA-seq omics machine learning classification",
+    "renal tubular injury transcriptomics biomarker prediction model",
+    "acute kidney injury proteomics metabolomics machine learning",
+    "kidney disease ATAC-seq epigenomics chromatin accessibility machine learning",
+    "chronic kidney disease multi-omics integration GWAS eQTL",
+    "kidney spatial transcriptomics cell type deconvolution",
+    "AKI CKD metabolomics urine biomarker random forest XGBoost",
+    "kidney injury urinary proteomics mass spectrometry deep learning"
+  ],
+  "geo_queries": [
+    "kidney AKI scRNA-seq",
+    "renal tubular injury RNA-seq",
+    "acute kidney injury proteomics",
+    "kidney ATAC-seq chromatin",
+    "renal metabolomics",
+    "kidney spatial transcriptomics"
+  ],
+  "total_records": 21,
+  "pubmed_records": 15,
+  "geo_records": 6,
+  "datasets_dir": "/home/ubuntu/ky/omics/results/omics_datasets",
+  "modality_ml_map": {
+    "scRNA-seq": {
+      "preferred_models": [
+        "random_forest",
+        "xgboost",
+        "lasso_rf",
+        "scvi_latent_xgb"
+      ],
+      "feature_strategies": [
+        "top_de",
+        "lasso",
+        "hvg_pca",
+        "scvi_latent"
+      ]
+    },
+    "snRNA-seq": {
+      "preferred_models": [
+        "random_forest",
+        "xgboost",
+        "lasso_rf"
+      ],
+      "feature_strategies": [
+        "top_de",
+        "lasso",
+        "pca"
+      ]
+    },
+    "bulk_RNA-seq": {
+      "preferred_models": [
+        "elastic_net",
+        "svm_rbf",
+        "random_forest",
+        "deseq2_lasso"
+      ],
+      "feature_strategies": [
+        "deseq2_de",
+        "lasso",
+        "pca_50"
+      ]
+    },
+    "proteomics": {
+      "preferred_models": [
+        "elastic_net",
+        "random_forest",
+        "xgboost",
+        "pls_da"
+      ],
+      "feature_strategies": [
+        "variance_filter",
+        "lasso",
+        "pca"
+      ]
+    },
+    "metabolomics": {
+      "preferred_models": [
+        "pls_da",
+        "svm_rbf",
+        "random_forest",
+        "elastic_net"
+      ],
+      "feature_strategies": [
+        "univariate_filter",
+        "pca",
+        "lasso"
+      ]
+    },
+    "epigenomics": {
+      "preferred_models": [
+        "lasso_rf",
+        "gradient_boosting",
+        "xgboost"
+      ],
+      "feature_strategies": [
+        "peak_de",
+        "motif_scores",
+        "pca"
+      ]
+    },
+    "genomics": {
+      "preferred_models": [
+        "lasso",
+        "elastic_net",
+        "gradient_boosting",
+        "polygenic_risk"
+      ],
+      "feature_strategies": [
+        "ld_pruned_snps",
+        "prs_score",
+        "pca_ancestry"
+      ]
+    },
+    "spatial_transcriptomics": {
+      "preferred_models": [
+        "xgboost",
+        "random_forest",
+        "gnn_spatial"
+      ],
+      "feature_strategies": [
+        "spatial_de",
+        "neighborhood_features",
+        "pca"
+      ]
+    },
+    "multi-omics": {
+      "preferred_models": [
+        "mofa_xgb",
+        "snf_rf",
+        "late_fusion_vote",
+        "early_fusion_lasso"
+      ],
+      "feature_strategies": [
+        "mofa_latent",
+        "snf_graph",
+        "concatenate_pca",
+        "lasso_each_block"
+      ]
+    },
+    "microbiome": {
+      "preferred_models": [
+        "random_forest",
+        "elastic_net",
+        "aldex2_lasso"
+      ],
+      "feature_strategies": [
+        "clr_transform",
+        "top_taxa",
+        "pca"
+      ]
+    }
+  },
+  "recommendation": {
+    "top_modalities": [
+      [
+        "bulk_RNA-seq",
+        8,
+        0.338
+      ],
+      [
+        "spatial_transcriptomics",
+        8,
+        0.338
+      ],
+      [
+        "unknown",
+        9,
+        0.189
+      ],
+      [
+        "multi-omics",
+        5,
+        0.3
+      ],
+      [
+        "scRNA-seq",
+        1,
+        0.2
+      ]
+    ],
+    "dominant_modality": "bulk_RNA-seq",
+    "recommended_models": [
+      "elastic_net",
+      "svm_rbf",
+      "random_forest",
+      "deseq2_lasso",
+      "xgboost",
+      "gnn_spatial"
+    ],
+    "recommended_features": [
+      "deseq2_de",
+      "lasso",
+      "pca_50",
+      "spatial_de",
+      "neighborhood_features",
+      "pca"
+    ],
+    "top_datasets": [
+      {
+        "id": "GSE261872",
+        "source": "geo",
+        "title": "NAD+ prevents chronic kidney disease by activating renal tubular metabolism - sp",
+        "modality": [
+          "bulk_RNA-seq",
+          "spatial_transcriptomics"
+        ],
+        "ml_score": 0.75,
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261872"
+      },
+      {
+        "id": "38805402",
+        "source": "pubmed",
+        "title": "Urinary cytokeratin 20 as a predictor for chronic kidney disease following acute",
+        "modality": [
+          "unknown"
+        ],
+        "ml_score": 0.55,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38805402/"
+      },
+      {
+        "id": "41043857",
+        "source": "pubmed",
+        "title": "Spatial transcriptomic profiling of metastatic renal cell carcinoma identifies c",
+        "modality": [
+          "bulk_RNA-seq",
+          "spatial_transcriptomics"
+        ],
+        "ml_score": 0.5,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41043857/"
+      },
+      {
+        "id": "42033552",
+        "source": "pubmed",
+        "title": "Integrated bioinformatics analysis and clinical validation identifies TNFSF14 an",
+        "modality": [
+          "multi-omics"
+        ],
+        "ml_score": 0.45,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42033552/"
+      },
+      {
+        "id": "41972152",
+        "source": "pubmed",
+        "title": "Genetically prioritized mitochondrial regulators of advanced renal failure: mult",
+        "modality": [
+          "multi-omics"
+        ],
+        "ml_score": 0.45,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41972152/"
+      }
+    ],
+    "narrative": "Found 21 kidney omics records. Dominant modality: bulk_RNA-seq (8 papers/datasets). Top ML approaches: elastic_net, svm_rbf, random_forest. Recommended feature strategies: deseq2_de, lasso, pca_50."
+  },
+  "all_records": [
+    {
+      "source": "pubmed",
+      "pmid": "42033552",
+      "title": "Integrated bioinformatics analysis and clinical validation identifies TNFSF14 and CD40 as novel biomarkers for chronic kidney disease progression and tubulointerstitial injury.",
+      "modalities": [
+        "multi-omics"
+      ],
+      "ml_score": 0.45,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42033552/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41756296",
+      "title": "Identification of lactylation and its hub genes in contributing immune activation and renal allograft fibrosis by integrative bioinformatics and machine learning.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.3,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41756296/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "40376698",
+      "title": "Identification and Validation of Tryptophan Metabolism-Related Genes in Diabetic Kidney Disease and Construction of a Clinical Prediction Model.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.3,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40376698/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "40270593",
+      "title": "S100A8/A9 high-expression macrophages mediate renal tubular epithelial cell damage in acute kidney injury following acute type A aortic dissection surgery.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.25,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40270593/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "38805402",
+      "title": "Urinary cytokeratin 20 as a predictor for chronic kidney disease following acute kidney injury.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.55,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38805402/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "37616058",
+      "title": "Endogenous adenine mediates kidney injury in diabetic models and predicts diabetic kidney disease in patients.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.3,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37616058/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "34547172",
+      "title": "LncRNA TUG1 attenuates ischaemia-reperfusion-induced apoptosis of renal tubular epithelial cells by sponging miR-144-3p via targeting Nrf2.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.0,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34547172/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41990104",
+      "title": "Systematic prioritization of potential therapeutic targets for glomerulonephritis using multi-omics Mendelian randomization.",
+      "modalities": [
+        "multi-omics"
+      ],
+      "ml_score": 0.2,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41990104/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41972152",
+      "title": "Genetically prioritized mitochondrial regulators of advanced renal failure: multi-omic Mendelian randomization and biological plausibility assessment in allograft fibrosis.",
+      "modalities": [
+        "multi-omics"
+      ],
+      "ml_score": 0.45,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41972152/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42034201",
+      "title": "Intragraft clonal expansion of cytotoxic CD8(+) and CD4(+) T cells in antibody-mediated kidney transplant rejection.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.0,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42034201/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41605921",
+      "title": "Injured epithelial cell states impact kidney allograft survival after T-cell-mediated rejection.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.0,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41605921/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41071604",
+      "title": "Spatial Transcriptomics Reveals Injured Cells, Signature Genes, and Communication Patterns in the Cyst Microenvironment of Polycystic Kidney Disease.",
+      "modalities": [
+        "bulk_RNA-seq",
+        "spatial_transcriptomics"
+      ],
+      "ml_score": 0.2,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41071604/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41043857",
+      "title": "Spatial transcriptomic profiling of metastatic renal cell carcinoma identifies chemokine-driven macrophage and CD8+ T-cell interactions predictive of immunotherapy response.",
+      "modalities": [
+        "bulk_RNA-seq",
+        "spatial_transcriptomics"
+      ],
+      "ml_score": 0.5,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41043857/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "39048792",
+      "title": "Single-cell multi-omic and spatial profiling of human kidneys implicates the fibrotic microenvironment in kidney disease progression.",
+      "modalities": [
+        "multi-omics"
+      ],
+      "ml_score": 0.2,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39048792/"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "38640017",
+      "title": "The Clinical Relevance of the Infiltrating Immune Cell Composition in Kidney Transplant Rejection.",
+      "modalities": [
+        "unknown"
+      ],
+      "ml_score": 0.0,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38640017/"
+    },
+    {
+      "source": "geo",
+      "accession": "GSE268847",
+      "title": "Implant renal injury-responsive cells to supplement erythropoietin and protect kidney [Spatial Transcriptomics]",
+      "modalities": [
+        "bulk_RNA-seq",
+        "spatial_transcriptomics"
+      ],
+      "ml_score": 0.45,
+      "n_samples": 2,
+      "taxon": "Homo sapiens; Mus musculus",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE268847"
+    },
+    {
+      "source": "geo",
+      "accession": "GSE261872",
+      "title": "NAD+ prevents chronic kidney disease by activating renal tubular metabolism - spatial transcriptomics",
+      "modalities": [
+        "bulk_RNA-seq",
+        "spatial_transcriptomics"
+      ],
+      "ml_score": 0.75,
+      "n_samples": 4,
+      "taxon": "Mus musculus",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261872"
+    },
+    {
+      "source": "geo",
+      "accession": "GSE261545",
+      "title": "Histopathological-based analysis of human kidney spatial transcriptomics data: toward precision pathology",
+      "modalities": [
+        "scRNA-seq",
+        "bulk_RNA-seq",
+        "spatial_transcriptomics",
+        "multi-omics"
+      ],
+      "ml_score": 0.2,
+      "n_samples": 1,
+      "taxon": "Homo sapiens",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261545"
+    },
+    {
+      "source": "geo",
+      "accession": "GSM8153339",
+      "title": "Kidney, spatial transcriptomics, male, Alport, nicotinamide riboside",
+      "modalities": [
+        "bulk_RNA-seq",
+        "spatial_transcriptomics"
+      ],
+      "ml_score": 0.2,
+      "n_samples": "",
+      "taxon": "Mus musculus",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8153339"
+    },
+    {
+      "source": "geo",
+      "accession": "GSM8153338",
+      "title": "Kidney, spatial transcriptomics, male, Alport, vehicle",
+      "modalities": [
+        "bulk_RNA-seq",
+        "spatial_transcriptomics"
+      ],
+      "ml_score": 0.2,
+      "n_samples": "",
+      "taxon": "Mus musculus",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8153338"
+    },
+    {
+      "source": "geo",
+      "accession": "GSM8153337",
+      "title": "Kidney, spatial transcriptomics, male, control, nicotinamide riboside",
+      "modalities": [
+        "bulk_RNA-seq",
+        "spatial_transcriptomics"
+      ],
+      "ml_score": 0.2,
+      "n_samples": "",
+      "taxon": "Mus musculus",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8153337"
+    }
+  ]
+}

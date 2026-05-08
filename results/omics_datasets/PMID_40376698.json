@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "40376698",
+  "title": "Identification and Validation of Tryptophan Metabolism-Related Genes in Diabetic Kidney Disease and Construction of a Clinical Prediction Model.",
+  "authors": [
+    "Liu S",
+    "Jiang Q",
+    "Li W",
+    "Shi J",
+    "Wu B",
+    "et al."
+  ],
+  "journal": "J Diabetes Res",
+  "year": "2025",
+  "doi": "10.1155/jdr/2736801",
+  "pmcid": "PMC12081153",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/40376698/",
+  "abstract": "Identification and Validation of Tryptophan Metabolism-Related Genes in Diabetic \nKidney Disease and Construction of a Clinical Prediction Model.",
+  "query": "renal tubular injury transcriptomics biomarker prediction model",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.3,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:00.294056"
+}

@@ -1,0 +1,27 @@
+{
+  "source": "pubmed",
+  "pmid": "40270593",
+  "title": "S100A8/A9 high-expression macrophages mediate renal tubular epithelial cell damage in acute kidney injury following acute type A aortic dissection surgery.",
+  "authors": [
+    "Cai X",
+    "Li X",
+    "Shi J",
+    "Tang L",
+    "Yang J",
+    "et al."
+  ],
+  "journal": "Front Mol Biosci",
+  "year": "2025",
+  "doi": "10.3389/fmolb.2025.1530741",
+  "pmcid": "PMC12015165",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/40270593/",
+  "abstract": "S100A8/A9 high-expression macrophages mediate renal tubular epithelial cell \ndamage in acute kidney injury following acute type A aortic dissection surgery.",
+  "query": "renal tubular injury transcriptomics biomarker prediction model",
+  "modalities": [
+    "unknown"
+  ],
+  "ml_score": 0.25,
+  "sample_size": "unknown",
+  "ml_recommendations": [],
+  "fetched_at": "2026-05-08T06:22:00.295219"
+}
