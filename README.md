@@ -13,15 +13,26 @@ Identify a transcriptomic signature that distinguishes AKI-associated cell state
 ## Architecture
 
 ```
+OmicsDiscoveryAgent  ◄── NEW
+    │  Broad PubMed search (8 kidney omics queries)
+    │  NCBI GEO dataset search (6 queries)
+    │  Classifies hits into 10 omics modality categories
+    │  Scores ML suitability; emits model recommendations
+    │  Saves results/omics_discovery.json
+    ▼
 SearchAgent
-    │  PubMed query (NCBI E-utilities)
+    │  AKI-focused PubMed query (NCBI E-utilities)
     │  Extracts benchmark AUROCs from literature
     ▼
 PlanAgent  ──────────────────────────────────────────────┐
     │  Selects ML strategy for each iteration             │
-    │  (RF, XGBoost, LASSO-RF, PCA-GBT, ensembles…)     │
+    │  Base pool: 7 approaches (RF → TunedRF)            │
+    │  Extended pool: +3 omics-aware strategies when      │ REPLAN
+    │  OmicsDiscovery finds high-scoring datasets         │
+    │  (PathwayScore-XGB, MultiOmics-EarlyFusion,        │
+    │   HVG-VAE-XGB)                                      │
     ▼                                                      │
-CodingAgent                                               │ REPLAN
+CodingAgent                                               │
     │  Executes iterative_pipeline.py with plan config    │
     │  Runs 5-fold cross-validation                       │
     ▼                                                      │
@@ -32,7 +43,7 @@ ReviewerAgent ──────────────────────
 final_report.json  +  orchestrator_full_log.txt
 ```
 
-The orchestrator runs **5–7 iterations** minimum, continuing past 5 if the reviewer signals `REPLAN` and budget remains (hard cap at 7).
+The orchestrator runs **5–7 iterations** minimum, continuing past 5 if the reviewer signals `REPLAN` and budget remains (hard cap at 7). When OmicsDiscovery finds datasets with ML suitability score ≥ 0.5 the strategy pool expands to **up to 10 iterations**.
 
 ### Two execution modes
 
@@ -48,11 +59,12 @@ The orchestrator runs **5–7 iterations** minimum, continuing past 5 if the rev
 ```
 openharness_aki/
 ├── agents/
-│   ├── orchestrator.py        # Main loop: SearchAgent → PlanAgent → CodingAgent → ReviewerAgent
+│   ├── orchestrator.py        # Main loop: OmicsDiscovery → Search → Plan → Code → Review
+│   ├── omics_discovery.py     # ★ NEW: PubMed + GEO kidney omics search & ML recommendation
 │   ├── coding_agent.py        # Executes iterative_pipeline with a given plan config
-│   ├── plan_agent.py          # Proposes ML strategy per iteration
+│   ├── plan_agent.py          # Proposes ML strategy per iteration (pool of 7–10)
 │   ├── reviewer_agent.py      # Evaluates metrics; returns ACCEPT / REPLAN / COMPLETE
-│   ├── pubmed_search.py       # NCBI E-utilities wrapper for literature search
+│   ├── pubmed_search.py       # NCBI E-utilities wrapper for AKI literature search
 │   └── test_agent.py          # Smoke-test harness
 │
 ├── analysis/
@@ -70,7 +82,10 @@ openharness_aki/
 │   └── patch_mcp.py                   # MCP server patching utility
 │
 ├── results/
-│   ├── final_report.json              # Summary of all 7 iterations + best model
+│   ├── final_report.json              # Summary of all iterations + best model + omics
+│   ├── omics_discovery.json           # ★ NEW: omics search summary & ML recommendations
+│   ├── omics_discovery_log.txt        # ★ NEW: full omics discovery run log
+│   ├── omics_datasets/                # ★ NEW: per-record JSON (PMID_*.json, GEO_GSE*.json)
 │   ├── feature_importance.csv         # RF Gini importances (top 50 genes)
 │   ├── differential_expression.csv    # Wilcoxon DE results (AKI vs Normal PT)
 │   ├── aki_signature_scores.csv       # Per-cell-type composite injury scores
@@ -78,12 +93,89 @@ openharness_aki/
 │   ├── iteration_*_metrics.json       # Per-iteration CV metrics
 │   ├── iteration_*_plan.json          # ML strategy chosen per iteration
 │   ├── iteration_*_review.json        # Reviewer decision per iteration
-│   └── fetched_studies/               # PubMed abstracts + PDFs
+│   └── fetched_studies/               # AKI-specific PubMed abstracts + PDFs
 │
 ├── data/                              # (empty — large .h5ad files excluded)
 ├── write_paper.py                     # Generates DHA2026 submission document
 ├── .gitignore
 └── README.md
+```
+
+---
+
+## Omics Discovery Module
+
+`agents/omics_discovery.py` runs as **Phase 0** of the orchestrator, before the AKI-specific literature search. It performs a broad sweep of kidney omics research to identify the best-fit ML approaches for whatever data modality is available.
+
+### What it searches
+
+| Phase | Source | Queries | Purpose |
+|-------|--------|---------|---------|
+| PubMed | NCBI E-utilities | 8 broad kidney omics queries | Literature: transcriptomics, proteomics, metabolomics, epigenomics, spatial, GWAS, multi-omics |
+| GEO | NCBI GEO DataSets (`gds`) | 6 dataset queries | Downloadable datasets with accession, sample count, FTP link |
+
+### Omics modality taxonomy
+
+The module classifies every hit into one or more of 10 modality categories using regex pattern matching:
+
+| Modality | Examples |
+|----------|---------|
+| `scRNA-seq` | 10x Genomics, droplet-based, Chromium |
+| `snRNA-seq` | single-nucleus RNA, snATAC |
+| `bulk_RNA-seq` | RNA-seq, mRNA-seq, transcriptome profiling |
+| `proteomics` | LC-MS, iTRAQ, TMT, label-free quantification |
+| `metabolomics` | metabolomics, NMR, GC-MS, lipidomics |
+| `epigenomics` | ATAC-seq, ChIP-seq, bisulfite-seq, histone marks |
+| `genomics` | GWAS, WES, WGS, SNP arrays |
+| `spatial_transcriptomics` | Visium, MERFISH, seqFISH |
+| `multi-omics` | multi-omics integration, proteogenomics |
+| `microbiome` | 16S rRNA, metagenomics |
+
+### ML suitability scoring
+
+Each record receives a 0–1 ML suitability score based on:
+- Classification/prediction language in abstract (+0.30)
+- AKI/CKD/renal failure endpoint present (+0.25)
+- Parseable sample size ≥ 20 (+0.15), ≥ 100 (+0.10)
+- ML-friendly modality (+0.20)
+
+### Modality → ML model mapping
+
+The `MODALITY_ML_MAP` table maps each modality to curated preferred models and feature strategies. Examples:
+
+| Modality | Preferred models | Feature strategies |
+|----------|-----------------|-------------------|
+| `scRNA-seq` / `snRNA-seq` | Random Forest, XGBoost, LASSO-RF | top DE genes, LASSO, PCA, scVI latent |
+| `proteomics` | Elastic-net, RF, XGBoost, PLS-DA | variance filter, LASSO, PCA |
+| `metabolomics` | PLS-DA, SVM-RBF, RF | CLR transform, univariate filter, PCA |
+| `spatial_transcriptomics` | XGBoost, RF, GNN-spatial | spatial DE, neighbourhood features |
+| `multi-omics` | MOFA+XGB, SNF-RF, late fusion vote | MOFA latent, SNF graph, concatenate+PCA |
+
+### Strategy pool extension
+
+When omics discovery finds any record with ML suitability score ≥ 0.5, the plan agent's strategy pool expands from **7 → 10** approaches:
+
+| ID | Name | Feature method | Model |
+|----|------|---------------|-------|
+| 8 | PathwayScore-XGB | KEGG/Reactome pathway activity scores (20 pathways) | XGBoost |
+| 9 | MultiOmics-EarlyFusion | DE genes + proteomics-proxy biomarkers → LASSO | Random Forest |
+| 10 | HVG-VAE-XGB | VAE latent (10-dim, 2000 HVGs) | XGBoost |
+
+### Outputs
+
+| File | Description |
+|------|-------------|
+| `results/omics_discovery.json` | Master summary: all records, modality counts, ML recommendation |
+| `results/omics_datasets/PMID_*.json` | Per-paper record (title, abstract, modality, ML score, recommendations) |
+| `results/omics_datasets/GEO_GSE*.json` | Per-GEO-dataset record (accession, n_samples, taxon, FTP link, modality) |
+| `results/omics_discovery_log.txt` | Full run log |
+
+### Run standalone
+
+```bash
+python agents/omics_discovery.py
+# → prints modality breakdown, top datasets, recommended models
+# → writes results/omics_discovery.json
 ```
 
 ---
